@@ -885,6 +885,11 @@ footer a:hover{color:#fff}
       </div>
       <div class="f"><label for="m">How can we partner?</label><textarea id="m" name="message" rows="4" required placeholder="Tell us briefly about your institution or organisation, cohort size and preferred dates…"></textarea></div>
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="format" id="fmtField" value="" />
+      <input type="hidden" name="_subject" id="subjField" value="New Design Thinking program inquiry" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" id="nextField" value="" />
       <button class="btn btn-acc" type="submit" id="sendBtn">Send inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <div class="ok" id="ok">Thank you! Your inquiry has been sent — Dr. Niiraj will get back to you shortly.</div>
       <div class="ok" id="err" style="background:#ffd6c7"><span id="errmsg">We couldn't send the form just now.</span> <a href="#" id="mailFallback" style="text-decoration:underline;font-weight:700">Send it through your email app instead →</a></div>
@@ -1007,6 +1012,12 @@ footer a:hover{color:#fff}
   const fmtv=()=>document.querySelector('input[name=fmt]:checked').value;
   const mailto=()=>`mailto:nirajkbafna@gmail.com?subject=${encodeURIComponent('Design Thinking program inquiry — '+fmtv())}&body=${encodeURIComponent(`Name: ${val('n')}\nEmail: ${val('e')}\nRepresenting: ${val('r')}\nFormat: ${fmtv()}\n\n${val('m')}`)}`;
   document.getElementById('mailFallback').addEventListener('click',e=>{e.preventDefault();location.href=mailto();});
+  const base=location.href.split('#')[0].split('?')[0];
+  document.getElementById('nextField').value=base+'?sent=1#contact';
+  if(new URLSearchParams(location.search).get('sent')==='1')ok.classList.add('show');
+  // classic POST to FormSubmit: works even when the AJAX call is blocked, and triggers first-time activation
+  const classicPost=()=>{document.getElementById('fmtField').value=fmtv();document.getElementById('subjField').value='New Design Thinking program inquiry — '+fmtv();
+    form.querySelectorAll('input[name=fmt]').forEach(r=>r.disabled=true);HTMLFormElement.prototype.submit.call(form);};
   form.addEventListener('submit',async e=>{e.preventDefault();ok.classList.remove('show');err.classList.remove('show');
     if(form.querySelector('[name=_honey]').value)return;
     const data={name:val('n'),email:val('e'),representing:val('r'),format:fmtv(),message:val('m'),
@@ -1016,8 +1027,8 @@ footer a:hover{color:#fff}
       const r=await fetch('https://formsubmit.co/ajax/nirajkbafna@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
       const j=await r.json().catch(()=>({}));
       if(r.ok&&String(j.success)==='true'){ok.classList.add('show');form.reset();}
-      else{errmsg.textContent=(j.message&&/activat/i.test(j.message))?'The form is being set up and can\'t deliver messages yet.':'We couldn\'t send the form just now.';err.classList.add('show');}
-    }catch(x){errmsg.textContent='We couldn\'t reach the mail service.';err.classList.add('show');}
+      else{classicPost();return;}
+    }catch(x){classicPost();return;}
     finally{btn.disabled=false;btn.innerHTML=label;}
   });
 })();
