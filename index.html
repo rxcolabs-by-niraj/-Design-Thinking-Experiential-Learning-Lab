@@ -739,7 +739,7 @@ footer a:hover{color:#fff}
     </div>
     <div class="fb-top">
       <div class="big acc reveal"><b><span data-count="100">100</span>%</b><small>said such workshops should be held more often</small></div>
-      <div class="big reveal"><b><span data-count="4.4" data-dec="1">4.4</span>/5</b><small>average rating across all workshop criteria</small></div>
+      <div class="big reveal"><b><span data-count="4.4" data-dec="1">4.4</span>/5</b><small>average rating for content, facilitation &amp; activities</small></div>
       <div class="big reveal" style="background:var(--yel)"><b><span data-count="88">88</span>%</b><small>rated workshop content 4 or 5 out of 5</small></div>
       <div class="big reveal" style="background:var(--mint)"><b><span data-count="4.5" data-dec="1">4.5</span>/5</b><small>top-rated: workshop content</small></div>
     </div>
@@ -749,7 +749,7 @@ footer a:hover{color:#fff}
         <div class="meter"><div class="row"><span>Workshop content</span><span>4.50</span></div><div class="bar"><i data-w="90"></i></div></div>
         <div class="meter"><div class="row"><span>Presentation &amp; facilitation</span><span>4.44</span></div><div class="bar"><i data-w="88.8"></i></div></div>
         <div class="meter"><div class="row"><span>Hands-on activities</span><span>4.38</span></div><div class="bar"><i data-w="87.6"></i></div></div>
-        <div class="meter"><div class="row"><span>Pharm.D-related information</span><span>4.25</span></div><div class="bar"><i data-w="85"></i></div></div>
+        <div class="meter"><div class="row"><span>Want such workshops more often</span><span>100%</span></div><div class="bar"><i data-w="100"></i></div></div>
       </div>
       <div class="learnt">
         <h4>"Three things I learnt today"</h4>
@@ -887,7 +887,7 @@ footer a:hover{color:#fff}
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <button class="btn btn-acc" type="submit" id="sendBtn">Send inquiry <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
       <div class="ok" id="ok">Thank you! Your inquiry has been sent — Dr. Niiraj will get back to you shortly.</div>
-      <div class="ok" id="err" style="background:#ffd6c7">Sorry, something went wrong sending the form. Please email <a href="mailto:nirajkbafna@gmail.com" style="text-decoration:underline;font-weight:700">nirajkbafna@gmail.com</a> directly.</div>
+      <div class="ok" id="err" style="background:#ffd6c7"><span id="errmsg">We couldn't send the form just now.</span> <a href="#" id="mailFallback" style="text-decoration:underline;font-weight:700">Send it through your email app instead →</a></div>
     </form>
   </div>
 </section>
@@ -1001,17 +1001,23 @@ footer a:hover{color:#fff}
   render('all');
   document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.f)}));
 
-  // form -> FormSubmit (AJAX), mailto fallback
-  const form=document.getElementById('form'),btn=document.getElementById('sendBtn'),ok=document.getElementById('ok'),err=document.getElementById('err');
+  // form -> FormSubmit (AJAX) with email-app fallback
+  const form=document.getElementById('form'),btn=document.getElementById('sendBtn'),ok=document.getElementById('ok'),err=document.getElementById('err'),errmsg=document.getElementById('errmsg');
+  const val=id=>document.getElementById(id).value.trim();
+  const fmtv=()=>document.querySelector('input[name=fmt]:checked').value;
+  const mailto=()=>`mailto:nirajkbafna@gmail.com?subject=${encodeURIComponent('Design Thinking program inquiry — '+fmtv())}&body=${encodeURIComponent(`Name: ${val('n')}\nEmail: ${val('e')}\nRepresenting: ${val('r')}\nFormat: ${fmtv()}\n\n${val('m')}`)}`;
+  document.getElementById('mailFallback').addEventListener('click',e=>{e.preventDefault();location.href=mailto();});
   form.addEventListener('submit',async e=>{e.preventDefault();ok.classList.remove('show');err.classList.remove('show');
-    const g=id=>document.getElementById(id).value.trim(),fmt=document.querySelector('input[name=fmt]:checked').value;
-    const data={name:g('n'),email:g('e'),representing:g('r'),format:fmt,message:g('m'),_honey:form.querySelector('[name=_honey]').value,
-      _subject:'New Design Thinking program inquiry — '+fmt,_template:'table',_captcha:'false'};
+    if(form.querySelector('[name=_honey]').value)return;
+    const data={name:val('n'),email:val('e'),representing:val('r'),format:fmtv(),message:val('m'),
+      _replyto:val('e'),_subject:'New Design Thinking program inquiry — '+fmtv(),_template:'table',_captcha:'false'};
     const label=btn.innerHTML;btn.disabled=true;btn.textContent='Sending…';
-    try{const r=await fetch('https://formsubmit.co/ajax/nirajkbafna@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
+    try{
+      const r=await fetch('https://formsubmit.co/ajax/nirajkbafna@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)});
       const j=await r.json().catch(()=>({}));
-      if(r.ok&&String(j.success)!=='false'){ok.classList.add('show');form.reset();}else throw new Error(j.message||'failed');
-    }catch(x){err.classList.add('show');}
+      if(r.ok&&String(j.success)==='true'){ok.classList.add('show');form.reset();}
+      else{errmsg.textContent=(j.message&&/activat/i.test(j.message))?'The form is being set up and can\'t deliver messages yet.':'We couldn\'t send the form just now.';err.classList.add('show');}
+    }catch(x){errmsg.textContent='We couldn\'t reach the mail service.';err.classList.add('show');}
     finally{btn.disabled=false;btn.innerHTML=label;}
   });
 })();
