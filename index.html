@@ -74,16 +74,16 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .mnav.open{display:block}
 
 /* HERO */
-.hero{min-height:100vh;padding:130px 0 0;overflow:hidden}
+.hero{min-height:100vh;padding:108px 0 0;overflow:hidden}
 .hero::after{content:"";position:absolute;width:780px;height:780px;right:-220px;top:-160px;background:radial-gradient(closest-side,rgba(255,90,31,.32),transparent);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;position:relative;z-index:2}
 .pill{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(245,241,232,.85);font-weight:500}
 .pill span{background:var(--acc);color:#fff;font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
-.hero h1{font-size:clamp(46px,6.3vw,94px);font-weight:800;margin:26px 0 24px;letter-spacing:-.035em;line-height:.94}
+.hero h1{font-size:clamp(44px,5.4vw,80px);font-weight:800;margin:20px 0 18px;letter-spacing:-.035em;line-height:.94}
 .hero h1 .solve{position:relative;display:inline-block;color:var(--ink);z-index:1;padding:0 .12em}
 .hero h1 .solve::before{content:"";position:absolute;inset:.1em -.02em .02em;background:var(--yel);transform:rotate(-2deg);z-index:-1;border-radius:6px}
-.hero h1 .scribble{font-family:var(--hand);color:var(--acc);font-weight:700;font-size:.42em;letter-spacing:0;display:inline-block;transform:rotate(-6deg) translateY(-.6em);margin-left:.15em}
-.hero p.sub{font-size:clamp(17px,1.5vw,20px);color:var(--muted-d);max-width:580px;margin-bottom:34px}
+.hero h1 .scribble{font-family:var(--hand);color:var(--acc);font-weight:700;font-size:.36em;letter-spacing:0;display:inline-block;transform:rotate(-6deg) translateY(-.6em);margin-left:.15em}
+.hero p.sub{font-size:clamp(16px,1.35vw,18.5px);color:var(--muted-d);max-width:580px;margin-bottom:26px}
 .hero p.sub strong{color:var(--paper);font-weight:600}
 .ctas{display:flex;flex-wrap:wrap;gap:14px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:56px;border-top:1px solid rgba(255,255,255,.12)}
@@ -98,17 +98,17 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .ph img,.ph video{width:100%;height:100%;object-fit:cover;border-radius:3px}
 .ph figcaption{position:absolute;left:14px;bottom:6px;font-family:var(--hand);font-size:22px;color:#333;font-weight:700}
 .ph:hover{transform:rotate(0) scale(1.03)!important;z-index:9}
-.ph1{width:330px;height:420px;right:10px;top:0;transform:rotate(5deg);z-index:2}
-.ph2{width:330px;height:240px;left:-10px;top:130px;transform:rotate(-6deg);z-index:3}
+.ph1{width:340px;height:430px;right:30px;top:0;transform:rotate(4deg);z-index:4}
+.ph2{width:340px;height:228px;left:-14px;top:340px;transform:rotate(-5deg);z-index:5}
 .ph3{width:340px;height:240px;left:40px;bottom:10px;transform:rotate(3deg);z-index:4}
-.ph-vid{width:240px;height:320px;right:30px;bottom:-10px;transform:rotate(-4deg);z-index:5;padding-bottom:10px}
+.ph-vid{width:220px;height:290px;right:-6px;bottom:-20px;z-index:6;transform:rotate(-4deg);z-index:5;padding-bottom:10px}
 .ph-vid .live{position:absolute;top:20px;left:20px;background:var(--acc);color:#fff;font-size:11px;font-weight:700;letter-spacing:.1em;padding:5px 10px;border-radius:999px;display:flex;gap:6px;align-items:center}
 .ph-vid .live::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
 @keyframes blink{50%{opacity:.2}}
 .note{position:absolute;font-family:var(--hand);font-weight:700;color:var(--ink);font-size:26px;line-height:1;padding:18px 16px;width:128px;height:118px;box-shadow:0 14px 26px -10px rgba(0,0,0,.55);z-index:6;display:flex;align-items:flex-end}
-.n1{background:var(--yel);left:250px;top:-34px;transform:rotate(-9deg)}
+.n1{background:var(--yel);left:40px;top:90px;transform:rotate(-9deg)}
 .n2{background:var(--pink);left:-30px;top:330px;transform:rotate(8deg);width:110px;height:100px}
-.n3{background:var(--mint);right:-26px;top:300px;transform:rotate(7deg);width:112px;height:104px;font-size:24px}
+.n3{background:var(--mint);right:250px;top:560px;transform:rotate(7deg);width:112px;height:104px;font-size:24px}
 .float{animation:float 6s ease-in-out infinite}
 .float.d2{animation-delay:-2s}.float.d3{animation-delay:-4s}
 @keyframes float{50%{translate:0 -10px}}
@@ -119,20 +119,31 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .ticker span::after{content:"✦";color:var(--ink)}
 @keyframes tick{to{transform:translateX(-50%)}}
 
+.cred{display:flex;gap:18px;align-items:center;margin-top:30px;padding:18px 22px 18px 18px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);max-width:620px}
+.cred img{width:76px;height:76px;border-radius:50%;object-fit:cover;border:3px solid var(--acc);flex:none}
+.cred small{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.cred b{display:block;font-family:var(--display);font-size:clamp(17px,1.6vw,21px);font-weight:700;line-height:1.25;color:#fff}
+.cred b em{font-style:normal;color:var(--yel)}
+.cred span{display:block;font-size:13px;color:var(--muted-d);margin-top:6px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.badges span{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 7px;border-radius:999px;border:1px solid rgba(255,255,255,.14);font-size:12.5px;font-weight:600;color:rgba(245,241,232,.85)}
+.badges i{font-style:normal;font-family:var(--display);font-weight:800;font-size:11px;background:var(--paper);color:var(--ink);padding:4px 8px;border-radius:999px;letter-spacing:.04em}
+.mcred{display:flex;gap:12px;align-items:center;background:var(--acc);color:#fff;border-radius:14px;padding:14px 16px;margin-bottom:18px;font-size:14px;font-weight:600;line-height:1.35}
+.mcred b{font-family:var(--display);font-size:22px;font-weight:800;line-height:1;flex:none;background:#fff;color:var(--acc);border-radius:10px;padding:10px 9px}
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
 .gap-card{padding:40px;border-radius:24px;background:var(--paper-2);border:2px dashed #c9bfa8;position:relative}
 .sol-card{padding:40px;border-radius:24px;background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
 .sol-card::after{content:"";position:absolute;width:300px;height:300px;right:-100px;bottom:-120px;background:radial-gradient(closest-side,rgba(255,90,31,.35),transparent)}
 .tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:18px}
-.tag-gap{background:#fff;color:#c2410c;border:1.5px solid #c2410c}
+.tag-gap{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
 .tag-sol{background:var(--mint);color:var(--ink)}
 .gap-card h3,.sol-card h3{font-size:clamp(26px,2.6vw,34px);font-weight:800;margin-bottom:14px}
 .gap-card p{color:var(--muted)}
 .sol-card p{color:var(--muted-d)}
 .xlist{list-style:none;margin:26px 0;display:grid;gap:12px}
 .xlist li{display:flex;gap:12px;align-items:flex-start;font-weight:500;background:#fff;padding:14px 16px;border-radius:12px;border:1px solid var(--line)}
-.xlist li i{flex:none;width:24px;height:24px;border-radius:50%;background:#fee2d5;color:#c2410c;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
+.xlist li i{flex:none;width:24px;height:24px;border-radius:50%;background:var(--mint);color:var(--ink);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:13px}
 .callout{background:var(--yel);padding:16px 18px;border-radius:12px;font-size:14.5px;transform:rotate(-.6deg);border:2px solid var(--ink)}
 .slist{list-style:none;margin-top:26px;display:grid;gap:14px;position:relative;z-index:1}
 .slist li{display:flex;gap:16px;padding:18px;border-radius:14px;background:var(--ink-2);border:1px solid var(--ink-3)}
@@ -229,7 +240,8 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .ben .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px;border:2px solid var(--ink)}
 .ben h4{font-size:19px;font-weight:800;margin-bottom:8px}
 .ben p{font-size:14px;color:var(--muted)}
-.who{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:26px}
+.who{display:grid;grid-template-columns:1fr;gap:22px;margin-top:26px}
+.who .who-card ul{grid-template-columns:1fr 1fr;gap:12px 30px}
 .who-card{padding:34px;border-radius:22px}
 .who-card h3{font-size:24px;font-weight:800;margin-bottom:18px}
 .who-card ul{list-style:none;display:grid;gap:12px}
@@ -283,6 +295,19 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .sn .who em{font-style:normal;font-weight:700;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;background:rgba(0,0,0,.1);padding:3px 8px;border-radius:999px;white-space:nowrap}
 @keyframes pop{from{opacity:0;transform:scale(.85)}}
 
+.fb-sum{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;padding:30px 36px;margin-top:48px}
+.fb-score b,.fb-pct b{display:block;font-family:var(--display);font-size:60px;font-weight:800;line-height:1}
+.fb-score b span{font-size:26px;color:var(--muted)}
+.fb-pct{background:var(--acc);color:#fff;border-radius:16px;padding:18px 22px;text-align:center}
+.fb-pct b{font-size:44px}
+.fb-score small,.fb-pct small{display:block;margin-top:8px;font-size:13px;font-weight:600}
+.fb-score small{color:var(--muted)}
+.fb-bars .meter{margin-bottom:12px}.fb-bars .meter:last-child{margin-bottom:0}
+.takeaways{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;margin:22px 0 34px}
+.takeaways b{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.takeaways span{padding:7px 13px;border-radius:999px;background:#fff;border:1.5px solid var(--ink);font-size:13.5px;font-weight:600}
+#notes{grid-template-columns:repeat(3,1fr);gap:22px}
+#notes .sn{min-height:180px}
 /* GALLERY */
 .design-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:56px}
 .design-row figure{aspect-ratio:16/10;border-radius:20px;overflow:hidden;cursor:zoom-in;border:2px solid var(--ink);background:#000;position:relative}
@@ -382,6 +407,9 @@ footer a:hover{color:#fff}
   .about-grid,.days,.mentor-grid,.who,.contact-grid,.meters,.prog-head,.motion,.clips,.fgrid{grid-template-columns:1fr}
   .profile{position:static}
   .fb-top{grid-template-columns:1fr 1fr}
+  .fb-sum{grid-template-columns:1fr;gap:22px;text-align:center}
+  #notes{grid-template-columns:1fr 1fr}
+  .who .who-card ul{grid-template-columns:1fr}
   .web-grid{grid-template-columns:1fr}
   .design-row{grid-template-columns:1fr}.design-row figure:first-child{grid-column:auto}
   .notes{grid-template-columns:1fr 1fr}
@@ -393,10 +421,12 @@ footer a:hover{color:#fff}
 }
 @media (max-width:560px){
   .wrap{padding:0 18px}
-  .collage{height:470px}
-  .ph1{width:220px;height:290px}.ph2{width:250px;height:190px;top:40px}.ph3{width:240px;height:170px;left:20px;bottom:20px}.ph-vid{width:170px;height:230px;right:6px}
-  .n1{left:180px;width:100px;height:92px;font-size:21px}.n2{display:none}.n3{display:none}
-  .ben-grid,.vt-grid,.phases,.notes{grid-template-columns:1fr}
+  .pill{font-size:12px;gap:8px}.pill span{white-space:nowrap}
+  .collage{height:500px}
+  .ph1{width:220px;height:290px}.ph2{width:250px;height:170px;top:250px;left:-6px}.ph3{width:240px;height:170px;left:20px;bottom:20px}.ph-vid{width:170px;height:230px;right:6px}
+  .n1{left:0;top:40px;width:100px;height:92px;font-size:21px}.n2{display:none}.n3{display:none}
+  .ben-grid,.vt-grid,.phases,.notes,#notes{grid-template-columns:1fr}
+  .cred{align-items:flex-start}.cred img{width:58px;height:58px}
   .vt-grid{grid-template-columns:1fr;max-width:340px}
   .fb-top{grid-template-columns:1fr}
   .fg{grid-template-columns:1fr}
@@ -458,22 +488,26 @@ footer a:hover{color:#fff}
         <a href="#curriculum" class="btn btn-acc">Explore the Curriculum <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#testimonials" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg> Watch Testimonials</a>
       </div>
-      <div class="stats reveal">
-        <div class="stat"><b><span data-count="65">65</span><em>+</em></b><small>Workshops facilitated</small></div>
-        <div class="stat"><b><span data-count="3">3</span> yrs</b><small>Visiting faculty, design thinking</small></div>
-        <div class="stat"><b>₹<span data-count="33">33</span>L<em>+</em></b><small>Innovation grant amount</small></div>
-        <div class="stat"><b>MIT<em>·</em>HMS</b><small>Healthcare innovation program</small></div>
+      <div class="cred reveal">
+        <img src="assets/img/niraj-portrait.jpg" alt="Dr. Niiraj K. Bafna" />
+        <div>
+          <small>Led by Dr. Niiraj K. Bafna</small>
+          <b>Learned Design Thinking &amp; healthcare innovation at <em>MIT Bootcamps</em> and <em>Harvard Medical School</em></b>
+          <span>65+ workshops facilitated · Visiting faculty for 3 years</span>
+        </div>
+      </div>
+      <div class="badges reveal">
+        <span><i>MIT</i>Massachusetts Institute of Technology</span>
+        <span><i>HMS</i>Harvard Medical School</span>
       </div>
     </div>
 
     <div class="collage reveal" aria-hidden="true">
-      <figure class="ph ph1 float"><img src="assets/img/g-podium.jpg" alt="" /><figcaption>keynote day ✦</figcaption></figure>
-      <figure class="ph ph2 float d2"><img src="assets/img/g-crowd-niraj.jpg" alt="" /><figcaption>empathise first</figcaption></figure>
-      <figure class="ph ph3 float d3"><img src="assets/img/g-customer-journey.jpg" alt="" /><figcaption>pitch it!</figcaption></figure>
+      <figure class="ph ph1 float"><video src="assets/video/hero-keynote.mp4" poster="assets/video/hero-keynote.jpg" autoplay muted loop playsinline preload="auto"></video><figcaption>keynote address ✦</figcaption></figure>
+      <figure class="ph ph2 float d2"><img src="assets/img/hero-empathise.jpg" alt="" /><figcaption>empathise first</figcaption></figure>
       <figure class="ph ph-vid"><video src="assets/video/hero-loop.mp4" poster="assets/video/hero-loop.jpg" autoplay muted loop playsinline preload="auto"></video><span class="live">IN ACTION</span></figure>
       <div class="note n1 float d2">Empathise →<br>Define</div>
-      <div class="note n2 float">Ideate!</div>
-      <div class="note n3 float d3">Prototype &amp; test</div>
+            <div class="note n3 float d3">Prototype &amp; test</div>
     </div>
   </div>
 
@@ -491,30 +525,30 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="reveal">
       <span class="kicker">About the program</span>
-      <h2 class="title">Textbooks teach answers.<br>The real world asks questions.</h2>
-      <p class="lead">Our programs close the gap between what classrooms teach and what careers, startups and organisations actually demand.</p>
+      <h2 class="title">Knowledge builds the foundation.<br>Experience builds problem-solvers.</h2>
+      <p class="lead">Our programs add the hands-on layer — turning what participants know into what they can do.</p>
     </div>
     <div class="about-grid">
       <div class="gap-card reveal">
-        <span class="tag tag-gap">✕ The learning gap</span>
-        <h3>Why traditional academic routes fall short</h3>
-        <p>Students and early-career professionals master technical textbooks, formulas and domain theory — yet are rarely taught how to spot ambiguous real-world problems, empathise with users, or test solutions in the field.</p>
+        <span class="tag tag-gap">◎ The next step</span>
+        <h3>From knowing to doing</h3>
+        <p>Students and early-career professionals build strong subject knowledge through their education. The next step is applying it — spotting ambiguous real-world problems, empathising with users and testing solutions in the field. These skills grow fastest through hands-on practice.</p>
         <ul class="xlist">
-          <li><i>✕</i>No structured design thinking frameworks</li>
-          <li><i>✕</i>No exposure to real-world user &amp; market discovery</li>
-          <li><i>✕</i>Underdeveloped pitching &amp; storytelling confidence</li>
-          <li><i>✕</i>Passive memorisation instead of team experimentation</li>
+          <li><i>+</i>Structured design thinking frameworks</li>
+          <li><i>+</i>Real-world user &amp; market discovery</li>
+          <li><i>+</i>Confident pitching &amp; storytelling</li>
+          <li><i>+</i>Learning through team experimentation</li>
         </ul>
-        <div class="callout"><strong>Rapid industry evolution:</strong> healthcare, digital enterprises and modern startups now demand creative problem-solvers who understand desirability, feasibility and viability — not just technical operators.</div>
+        <div class="callout"><strong>Why now:</strong> every industry today values creative problem-solvers who balance what users want, what's feasible and what's viable.</div>
       </div>
       <div class="sol-card reveal">
         <span class="tag tag-sol">✓ Our solution</span>
-        <h3>Experiential learning beyond the classroom</h3>
-        <p>We combine Design Thinking, Systems Thinking and MIT's Disciplined Entrepreneurship principles into an energetic, activity-based sprint where participants learn by doing.</p>
+        <h3>Learn by doing.</h3>
+        <p>Design Thinking + Systems Thinking + MIT's Disciplined Entrepreneurship — in one hands-on sprint.</p>
         <ul class="slist">
-          <li><span class="ic" style="background:var(--yel)">01</span><div><h4>Learn by solving real challenges</h4><p>Cross-functional teams dissect real healthcare and business problems, build tangible prototypes and test them with peers.</p></div></li>
-          <li><span class="ic" style="background:var(--pink)">02</span><div><h4>Facilitated by a startup practitioner</h4><p>Guided by real venture experience — from clinical hospital pilots and patent filings to 65+ college and corporate workshops.</p></div></li>
-          <li><span class="ic" style="background:var(--mint)">03</span><div><h4>Tailored to your audience</h4><p>Adaptable for student cohorts, faculty, MSMEs, entrepreneurs and corporate teams — with 1-Day and 2-Day formats.</p></div></li>
+          <li><span class="ic" style="background:var(--yel)">01</span><div><h4>Real challenges</h4><p>Teams solve live problems and build prototypes.</p></div></li>
+          <li><span class="ic" style="background:var(--pink)">02</span><div><h4>Practitioner-led</h4><p>Guided by a founder trained at MIT &amp; Harvard Medical School.</p></div></li>
+          <li><span class="ic" style="background:var(--mint)">03</span><div><h4>Built around you</h4><p>1-Day or 2-Day formats, for any cohort.</p></div></li>
         </ul>
       </div>
     </div>
@@ -644,6 +678,7 @@ footer a:hover{color:#fff}
           <div class="nm"><h3>Dr. Niiraj K. Bafna</h3><p>Pune, Maharashtra · Pharm.D.</p></div>
         </div>
         <p class="role">Skill, Innovation &amp; Partnership Catalyst · Founder, EFFIPAC (RxCo Pvt. Ltd.)</p>
+        <div class="mcred"><b>MIT×HMS</b><span>Learned Design Thinking &amp; healthcare innovation at MIT Bootcamps and Harvard Medical School, Cambridge, USA</span></div>
         <blockquote class="quote">"Over the last decade, my work has revolved around one central mission: helping young people become highly competent individuals who succeed on merit rather than settling for mediocrity."</blockquote>
         <div class="mstats">
           <div class="mstat"><b>65+</b><small>Workshops facilitated</small></div>
@@ -659,13 +694,12 @@ footer a:hover{color:#fff}
       </aside>
 
       <div class="timeline">
+        <div class="tl reveal"><span class="when">Global innovation cohort · Cambridge, USA</span><h4>MIT Bootcamps &amp; Harvard Medical School — Healthcare Innovation</h4><p>Selected for the competitive MIT Bootcamps healthcare innovation program with Harvard Medical School, where he learned Design Thinking and venture building first-hand. Applied Bill Aulet's 24-step Disciplined Entrepreneurship framework to build an AI-based home health monitoring concept with a global team — the same methods he now teaches.</p></div>
         <div class="tl reveal"><span class="when">Ecosystem visionary</span><h4>Design Thinking &amp; Experiential Innovation Facilitator</h4><p>Facilitated 65+ workshops across design thinking, experiential problem-solving and entrepreneurial thinking. Visiting faculty at Poona College of Pharmacy, Bharati Vidyapeeth, for three years — guiding students through design thinking, systems thinking and capstone projects.</p></div>
-        <div class="tl reveal"><span class="when">Founder &amp; CEO · 2020 – 2025</span><h4>EFFIPAC (RxCo Private Limited)</h4><p>Built an indigenously engineered multi-dose pouch dispensing &amp; medication-adherence system, piloted at Ruby Hall Clinic and Deenanath Mangeshkar Hospital. Led a 20-person cross-functional team, won ₹13L in competitive government grants with selection for the Amrit Grand Challenge (eligibility for a further ₹20L), and secured a provisional patent, 2 copyrights and 2 trademarks.</p></div>
-        <div class="tl reveal"><span class="when">Global innovation cohort · 2018 – 2019</span><h4>MIT &amp; Harvard Medical School Healthcare Innovation</h4><p>Selected for a competitive MIT / Harvard healthcare innovation program in Cambridge; applied Bill Aulet's 24-step Disciplined Entrepreneurship framework to build an AI-based home health monitoring system with a global team.</p></div>
+        <div class="tl reveal"><span class="when">Founder &amp; CEO · 2020 – 2025</span><h4>EFFIPAC (RxCo Private Limited)</h4><p>Built an indigenously engineered multi-dose pouch dispensing &amp; medication-adherence system, piloted at Ruby Hall Clinic and Deenanath Mangeshkar Hospital. Led a 20-person cross-functional team, won ₹13L in competitive government grants with selection for the Amrit Grand Challenge (eligibility for a further ₹20L).</p></div>
         <div class="tl reveal"><span class="when">Fellowship &amp; academic innovation</span><h4>NIDHI Entrepreneur-in-Residence &amp; IIC Member</h4><p>NIDHI EIR Fellow at Venture Centre, NCL Innovation Park, Pune. Institution's Innovation Council (IIC) member at Indira College of Pharmacy and Poona College of Pharmacy; industry expert at the IIC, Indrayani College of Pharmacy.</p></div>
         <div class="tl reveal"><span class="when">Founder &amp; President · 2014 – 2017</span><h4>Indian Pharmaceutical Association – Students' Forum, Pune</h4><p>Founded and led a pharmacy-student development forum across Pune's pharmacy colleges — still run today by its student council.</p></div>
         <div class="tl reveal"><span class="when">Cross-industry network</span><h4>Pan-India Business Community Lead</h4><p>Leads a Pan-India business community of entrepreneurs, MSMEs and professionals — bringing diverse cross-industry perspectives into every workshop.</p></div>
-        <div class="creds reveal"><span>Pharm.D. — Poona College of Pharmacy</span><span>NIDHI PRAYAS grantee</span><span>IPA award for contribution to pharmacy</span><span>Provisional patent holder</span></div>
       </div>
     </div>
   </div>
@@ -677,7 +711,7 @@ footer a:hover{color:#fff}
     <div class="center reveal">
       <span class="kicker">Benefits</span>
       <h2 class="title">What one day can change</h2>
-      <p class="lead">Built for colleges, student cohorts, MSMEs, entrepreneurs and corporate innovation teams.</p>
+      <p class="lead">Built for student cohorts, MSMEs, entrepreneurs and corporate innovation teams.</p>
     </div>
     <div class="ben-grid">
       <div class="ben reveal"><div class="ic" style="background:var(--yel)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e0e10" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="#0e0e10"/></svg></div><h4>Sharpen problem solving</h4><p>Frame messy, ambiguous challenges and break them into solvable parts.</p></div>
@@ -687,15 +721,6 @@ footer a:hover{color:#fff}
       <div class="ben reveal"><div class="ic" style="background:var(--acc)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0e0e10" stroke-width="2"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M14 4c3-1 6-1 6-1s0 3-1 6l-7 7-5-5z"/><circle cx="15" cy="9" r="1.5"/></svg></div><h4>Career &amp; future-ready</h4><p>Frameworks you can apply straight away to careers, capstones and startups.</p></div>
     </div>
     <div class="who">
-      <div class="who-card reveal" style="background:var(--ink);color:var(--paper)">
-        <h3>Why colleges &amp; organisations partner with us</h3>
-        <ul>
-          <li>Improves participant employability, initiative and structured problem-solving.</li>
-          <li>Strengthens Institution's Innovation Councils (IIC) and campus entrepreneurship cells.</li>
-          <li>Bridges academia and industry expectations with capstone &amp; Demo Day outputs.</li>
-          <li>Adaptable for student cohorts, corporate teams, MSMEs and early-stage founders.</li>
-        </ul>
-      </div>
       <div class="who-card reveal card">
         <h3>Why students &amp; participants love it</h3>
         <ul>
@@ -734,43 +759,20 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <div class="center reveal">
       <span class="kicker">Feedback</span>
-      <h2 class="title">Straight from the feedback sheets</h2>
-      <p class="lead">Real responses from our Design Thinking workshop form and RxCo Labs internship survey — unedited in spirit, lightly trimmed for length.</p>
+      <h2 class="title">What participants said</h2>
+      <p class="lead">From our Design Thinking workshop feedback form.</p>
     </div>
-    <div class="fb-top">
-      <div class="big acc reveal"><b><span data-count="100">100</span>%</b><small>said such workshops should be held more often</small></div>
-      <div class="big reveal"><b><span data-count="4.4" data-dec="1">4.4</span>/5</b><small>average rating for content, facilitation &amp; activities</small></div>
-      <div class="big reveal" style="background:var(--yel)"><b><span data-count="88">88</span>%</b><small>rated workshop content 4 or 5 out of 5</small></div>
-      <div class="big reveal" style="background:var(--mint)"><b><span data-count="4.5" data-dec="1">4.5</span>/5</b><small>top-rated: workshop content</small></div>
-    </div>
-
-    <div class="card meters reveal">
-      <div id="meters">
-        <div class="meter"><div class="row"><span>Workshop content</span><span>4.50</span></div><div class="bar"><i data-w="90"></i></div></div>
-        <div class="meter"><div class="row"><span>Presentation &amp; facilitation</span><span>4.44</span></div><div class="bar"><i data-w="88.8"></i></div></div>
-        <div class="meter"><div class="row"><span>Hands-on activities</span><span>4.38</span></div><div class="bar"><i data-w="87.6"></i></div></div>
-        <div class="meter"><div class="row"><span>Want such workshops more often</span><span>100%</span></div><div class="bar"><i data-w="100"></i></div></div>
+    <div class="card fb-sum reveal">
+      <div class="fb-score"><b>4.4<span>/5</span></b><small>Average workshop rating</small></div>
+      <div class="fb-bars">
+        <div class="meter"><div class="row"><span>Workshop content</span><span>4.5</span></div><div class="bar"><i data-w="90"></i></div></div>
+        <div class="meter"><div class="row"><span>Facilitation</span><span>4.4</span></div><div class="bar"><i data-w="88.8"></i></div></div>
+        <div class="meter"><div class="row"><span>Hands-on activities</span><span>4.4</span></div><div class="bar"><i data-w="87.6"></i></div></div>
       </div>
-      <div class="learnt">
-        <h4>"Three things I learnt today"</h4>
-        <p>What participants wrote, in their own words:</p>
-        <div class="cloud">
-          <span style="background:var(--yel)">Think out of the box</span><span style="background:var(--pink)">Problem identification</span><span style="background:var(--mint)">Customer feedback</span><span style="background:var(--blue)">Team spirit</span><span style="background:#fff">Confidence</span><span style="background:var(--yel)">Analytical thinking</span><span style="background:var(--mint)">Question everything</span><span style="background:#fff">Market information</span><span style="background:var(--pink)">Open up your thoughts</span><span style="background:var(--blue)">Keep moving forward</span><span style="background:#fff">Go to the root of the problem</span>
-        </div>
-      </div>
+      <div class="fb-pct"><b>100%</b><small>want more workshops like this</small></div>
     </div>
-
-    <div class="board reveal">
-      <div class="board-h">
-        <h3>The feedback wall</h3>
-        <div class="filters" id="filters">
-          <button class="on" data-f="all">All</button>
-          <button data-f="workshop">Workshops</button>
-          <button data-f="intern">Internships</button>
-        </div>
-      </div>
-      <div class="notes" id="notes"></div>
-    </div>
+    <div class="takeaways reveal"><b>Top takeaways</b><span>Think out of the box</span><span>Problem identification</span><span>Customer feedback</span><span>Team spirit</span><span>Confidence</span></div>
+    <div class="notes reveal" id="notes"></div>
   </div>
 </section>
 
@@ -986,25 +988,15 @@ footer a:hover{color:#fff}
 
   // feedback wall
   const fb=[
-    {t:'workshop',n:'Atharva S. Deshmukh',q:'The most valuable thing was that it promoted curiosity. I understood the importance of customer feedback and making an idea out of a problem to solve it.'},
-    {t:'intern',n:'Prerna Bramhe',q:'Working with Dr Niraj Bafna was enlightening and inspiring — every step of the way we learnt new things and explored new challenges.'},
-    {t:'workshop',n:'Drushti Ladhane',q:'Making groups made us meet and understand the thoughts of unlike-minded people — analysing problems not just by oneself but with others.'},
-    {t:'intern',n:'Dr. Allen Abraham',q:'I really enjoyed the brainstorming sessions with Niraj. They made me think effectively — Process efficiency, Lean, FMEA and real troubleshooting.'},
-    {t:'workshop',n:'Jiyaa Solanki',q:'Problem solving — it lets us know about the problem and gives us an idea, initiative and courage to solve it. I like the environment created.'},
-    {t:'intern',n:'Rhea Joseph',q:'I want to thank Niraj for believing in us — all our views and ideas were heard and, if good, implemented as well.'},
-    {t:'workshop',n:'Vishakha Deshmukh',q:'An interactive session with steps of designing and innovating on the given topic. Problem identification is an important aspect.'},
-    {t:'intern',n:'Choyan Divya',q:'I gained a lot more confidence — finding the "why" and "how" behind every step I take.'},
-    {t:'workshop',n:'Srishti Saxena',q:'The practical approach and group interaction. I believe it will help us with our practical and creative thinking.'},
-    {t:'intern',n:'Pooja Santosh Chavan',q:'This internship increased my confidence, self-belief, communication and creative thinking. Thanks to you Mr Niraj :)'},
-    {t:'workshop',n:'Russell Robinson',q:'The hands-on thinking activities were very nice — they help inculcate entrepreneurial thoughts, which is a need in today\'s world.'},
-    {t:'intern',n:'Sajin Saji',q:'It helped me think in a broader way about career opportunities — not just sticking to what others have been doing.'}
+    {n:'Atharva S. Deshmukh',q:'It promoted curiosity. I understood the importance of customer feedback and making an idea out of a problem to solve it.'},
+    {n:'Drushti Ladhane',q:'Working in groups helped us understand unlike-minded people — analysing problems not just by oneself but with others.'},
+    {n:'Jiyaa Solanki',q:'It gives us an idea, initiative and courage to solve a problem. I like the environment created.'},
+    {n:'Vishakha Deshmukh',q:'An interactive session with clear steps of designing and innovating. Problem identification is so important.'},
+    {n:'Srishti Saxena',q:'The practical approach and group interaction — it will help our practical and creative thinking.'},
+    {n:'Russell Robinson',q:'The hands-on thinking activities were very nice — they build the entrepreneurial thinking today\'s world needs.'}
   ];
   const cols=['#ffd84d','#ff9ec7','#9fe6c1','#8ec5ff','#ffb877','#fff3a3'];
-  const notes=document.getElementById('notes');
-  const render=f=>{const it=f==='all'?fb:fb.filter(x=>x.t===f);
-    notes.innerHTML=it.map((x,i)=>`<div class="sn" style="background:${cols[i%cols.length]};transform:rotate(${[-3,2,-1.5,3,-2,1.5][i%6]}deg);animation-delay:${i*45}ms"><p>“${x.q}”</p><div class="who">— ${x.n}<em>${x.t==='intern'?'RxCo intern':'Workshop'}</em></div></div>`).join('')};
-  render('all');
-  document.querySelectorAll('#filters button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('#filters button').forEach(x=>x.classList.remove('on'));b.classList.add('on');render(b.dataset.f)}));
+  document.getElementById('notes').innerHTML=fb.map((x,i)=>`<div class="sn" style="background:${cols[i]};transform:rotate(${[-2,1.5,-1,2,-1.5,1][i]}deg)"><p>“${x.q}”</p><div class="who">— ${x.n}</div></div>`).join('');
 
   // form -> FormSubmit (AJAX) with email-app fallback
   const form=document.getElementById('form'),btn=document.getElementById('sendBtn'),ok=document.getElementById('ok'),err=document.getElementById('err'),errmsg=document.getElementById('errmsg');
