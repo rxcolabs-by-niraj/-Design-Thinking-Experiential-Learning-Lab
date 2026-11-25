@@ -175,6 +175,18 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .phase .time{position:absolute;top:22px;right:20px;font-size:12px;font-weight:700;background:rgba(255,255,255,.7);padding:4px 10px;border-radius:999px}
 .agenda{margin-top:26px;padding:34px 40px}
 .agenda h4{font-size:22px;font-weight:800;margin-bottom:18px}
+.ag summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.ag summary::-webkit-details-marker{display:none}
+.ag-t b{display:block;font-family:var(--display);font-size:22px;font-weight:800}
+.ag-t small{font-size:13px;color:var(--muted);font-weight:600}
+.ag-cta{display:inline-flex;align-items:center;gap:10px;background:var(--yel);border:2px solid var(--ink);padding:11px 18px;border-radius:999px;font-weight:700;font-size:14px;box-shadow:3px 3px 0 var(--ink);animation:nudge 2.2s ease-in-out infinite}
+.ag-cta i{font-style:normal;display:inline-block;transition:transform .3s}
+.ag[open] .ag-cta{animation:none;background:#fff}
+.ag[open] .ag-cta i{transform:rotate(180deg)}
+.ag summary:hover .ag-cta{background:var(--acc);color:#fff}
+@keyframes nudge{0%,60%,100%{transform:translateY(0)}70%{transform:translateY(-5px)}80%{transform:translateY(0)}90%{transform:translateY(-3px)}}
+.ag-body{margin-top:18px;animation:fadeUp .4s ease}
+.ag:not([open])+.outcomes{margin-top:20px}
 .slot{display:grid;grid-template-columns:150px 1fr auto;gap:20px;padding:16px 0;border-top:1px dashed var(--line);align-items:center}
 .slot:first-of-type{border-top:0}
 .slot .t{font-weight:700;font-size:14px;color:var(--acc)}
@@ -335,6 +347,11 @@ header.nav.scrolled{background:rgba(14,14,16,.86);backdrop-filter:blur(14px);bor
 .web{background:var(--ink-2);border:1px solid var(--ink-3);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
 .embed{position:relative;aspect-ratio:16/9;background:#000}
 .embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.facade{cursor:pointer;overflow:hidden}
+.facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.facade:hover img{transform:scale(1.04)}
+.fplay{position:absolute;right:18px;bottom:18px;width:60px;height:60px;border-radius:50%;background:var(--acc);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(255,90,31,.28);transition:transform .25s}
+.facade:hover .fplay{transform:scale(1.1)}
 .web .bd{padding:22px 24px 26px}
 .web .src{display:inline-flex;gap:8px;align-items:center;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;margin-bottom:12px}
 .src.yt{background:rgba(255,0,0,.15);color:#ff8080}
@@ -493,7 +510,7 @@ footer a:hover{color:#fff}
         <div>
           <small>Led by Dr. Niiraj K. Bafna</small>
           <b>Learned Design Thinking &amp; healthcare innovation at <em>MIT Bootcamps</em> and <em>Harvard Medical School</em></b>
-          <span>65+ workshops facilitated · Visiting faculty for 3 years</span>
+          <span>65+ workshops facilitated · Visiting faculty for 3 years · Founder, EFFIPAC</span>
         </div>
       </div>
       <div class="badges reveal">
@@ -595,7 +612,9 @@ footer a:hover{color:#fff}
       </div>
 
       <div class="card agenda reveal">
-        <h4>A day, hour by hour</h4>
+        <details class="ag">
+          <summary><span class="ag-t"><b>A day, hour by hour</b><small>9 sessions · 9:30 AM – 4:30 PM</small></span><span class="ag-cta">See full schedule <i>▾</i></span></summary>
+          <div class="ag-body">
         <div class="slot"><span class="t">09:30 – 10:00</span><div><b>Kick-off &amp; mindset reset</b><span class="d">Why design thinking? Icebreaker, team formation and the "problems are opportunities" frame.</span></div><span class="chip">Warm-up</span></div>
         <div class="slot"><span class="t">10:00 – 11:15</span><div><b>Empathise &amp; discover</b><span class="d">Observation walk, 5-question user interviews and empathy maps on a real campus / healthcare / business challenge.</span></div><span class="chip">Understand</span></div>
         <div class="slot"><span class="t">11:15 – 11:30</span><div><b>Tea break</b><span class="d">Sticky-note gallery walk of team insights.</span></div><span class="chip">Break</span></div>
@@ -605,6 +624,8 @@ footer a:hover{color:#fff}
         <div class="slot"><span class="t">14:00 – 15:15</span><div><b>Prototype &amp; test</b><span class="d">Paper prototypes, storyboards and role-plays; quick peer testing and one round of iteration.</span></div><span class="chip">Build</span></div>
         <div class="slot"><span class="t">15:15 – 16:15</span><div><b>Team share-out</b><span class="d">3-minute team presentations with mentor feedback on desirability, feasibility and viability.</span></div><span class="chip">Share</span></div>
         <div class="slot"><span class="t">16:15 – 16:30</span><div><b>Reflect &amp; next steps</b><span class="d">Personal takeaways, feedback form and how to keep applying the method.</span></div><span class="chip">Reflect</span></div>
+          </div>
+        </details>
         <div class="outcomes">
           <span>🎯 Sharper problem solving</span><span>🧠 Creativity &amp; innovation</span><span>🤝 Teamwork</span><span>⭐ Confidence &amp; communication</span><span>🚀 Career &amp; future-ready skills</span>
         </div>
@@ -816,7 +837,7 @@ footer a:hover{color:#fff}
       </div>
       <div class="reveal">
         <div class="vbox" style="aspect-ratio:9/16;max-height:640px;margin:0 auto"><video src="assets/video/keynote-reel.mp4" poster="assets/video/keynote-reel.jpg" controls playsinline preload="none"></video></div>
-        <div class="vmeta"><b>Keynote reel</b><span>Technology · Innovation · Entrepreneurship</span></div>
+        <div class="vmeta"><b>Keynote at Venture Center, NCL Innovation Park</b></div>
       </div>
     </div>
   </div>
@@ -831,15 +852,15 @@ footer a:hover{color:#fff}
     </div>
     <div class="web-grid">
       <article class="web reveal">
-        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/x5qXPY-9ZS8" title="Design Thinking &amp; Innovation live session" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="embed facade" data-src="https://www.youtube-nocookie.com/embed/x5qXPY-9ZS8?autoplay=1" data-title="Design Thinking &amp; Innovation live session" role="button" tabindex="0" aria-label="Play: Design Thinking &amp; Innovation live session"><img src="assets/img/thumb-live.jpg" alt="Design Thinking &amp; Innovation live session" loading="lazy" /><span class="fplay"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
         <div class="bd"><span class="src yt">● YouTube Live</span><h4>Design Thinking &amp; Innovation Live Session</h4><p>Interactive live webinar on problem discovery and creative problem-solving.</p></div>
       </article>
       <article class="web reveal">
-        <div class="embed"><iframe src="https://drive.google.com/file/d/1yshtUvjzrKrymF-lboHYh2mKVSUiCvZo/preview" title="National Youth Day: Inside an Innovator's Mind" loading="lazy" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+        <div class="embed facade" data-src="https://drive.google.com/file/d/1yshtUvjzrKrymF-lboHYh2mKVSUiCvZo/preview" data-title="National Youth Day: Inside an Innovator's Mind" role="button" tabindex="0" aria-label="Play: National Youth Day: Inside an Innovator's Mind"><img src="assets/img/thumb-nyd.jpg" alt="National Youth Day: Inside an Innovator's Mind" loading="lazy" /><span class="fplay"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
         <div class="bd"><span class="src rec">● Recorded talk</span><h4>National Youth Day: Inside an Innovator's Mind</h4><p>Student-to-Student Connect special talk on building an innovation mindset.</p></div>
       </article>
       <article class="web reveal">
-        <div class="embed"><iframe src="https://www.youtube-nocookie.com/embed/VeH9Z1pr--w" title="AICTE STC 2022: Healthcare Startups" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <div class="embed facade" data-src="https://www.youtube-nocookie.com/embed/VeH9Z1pr--w?autoplay=1" data-title="AICTE STC 2022: Healthcare Startups" role="button" tabindex="0" aria-label="Play: AICTE STC 2022: Healthcare Startups"><img src="assets/img/thumb-aicte.jpg" alt="AICTE STC 2022: Healthcare Startups" loading="lazy" /><span class="fplay"><svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></div>
         <div class="bd"><span class="src yt">● YouTube</span><h4>AICTE STC 2022: Healthcare Startups</h4><p>Invited talk on healthcare innovation, venture building and patient-centric design.</p></div>
       </article>
     </div>
@@ -976,6 +997,9 @@ footer a:hover{color:#fff}
   document.getElementById('lbnext').addEventListener('click',e=>{e.stopPropagation();show(li+1)});
   addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='ArrowRight')show(li+1);if(e.key==='ArrowLeft')show(li-1)}});
 
+  // webinar thumbnails -> load player on click
+  document.querySelectorAll('.facade').forEach(f=>{const go=()=>{f.innerHTML=`<iframe src="${f.dataset.src}" title="${f.dataset.title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;f.classList.remove('facade');};
+    f.addEventListener('click',go);f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
   // testimonial videos
   const allVids=[...document.querySelectorAll('video')];
   document.querySelectorAll('.vt').forEach(card=>{
